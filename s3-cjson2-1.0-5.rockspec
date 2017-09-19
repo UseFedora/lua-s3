@@ -1,5 +1,5 @@
 package = "s3-cjson2"
-version = "1.0-4"
+version = "1.0-5"
 
 source = {
    url = "git://github.com/UseFedora/lua-s3",
