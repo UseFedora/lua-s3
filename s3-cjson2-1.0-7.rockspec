@@ -1,5 +1,5 @@
 package = "s3-cjson2"
-version = "1.0-6"
+version = "1.0-7"
 
 source = {
    url = "git://github.com/UseFedora/lua-s3",
@@ -13,7 +13,6 @@ description = {
 dependencies = {
    "lua-resty-hmac",
    "luacrypto",
-   "lua-cjson2",
    "date",
    "luasocket",
 }

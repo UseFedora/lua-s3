@@ -2,7 +2,7 @@ local http = require'socket.http'
 local url = require'socket.url'
 local hmac = require'resty.hmac'
 local crypto = require("crypto")
-local cjson = require("lua-cjson")
+local cjson = require("cjson")
 local date = require("date") -- this is luadate
 
 local function generateAuthHeaders(awsVerb, awsId, awsKey, awsToken, md5, acl, type, destination)
