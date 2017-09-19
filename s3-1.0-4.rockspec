@@ -1,19 +1,19 @@
-package = "s3"
+package = "s3-cjson2"
 version = "1.0-4"
 
 source = {
-   url = "git://github.com/gcr/lua-s3",
+   url = "git://github.com/UseFedora/lua-s3",
 }
 
 description = {
    summary = "A simple S3 API to upload and download objects",
-   homepage = "https://github.com/gcr/lua-s3"
+   homepage = "https://github.com/UseFedora/lua-s3"
 }
 
 dependencies = {
    "lua-resty-hmac",
    "luacrypto",
-   "lua-cjson",
+   "lua-cjson2",
    "date",
    "luasocket",
 }
