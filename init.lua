@@ -7,6 +7,13 @@ local date = require("date") -- this is luadate
 
 http.TIMEOUT = 30
 
+function string:split(sep)
+  local sep, fields = sep or ":", {}
+  local pattern = string.format("([^%s]+)", sep)
+  self:gsub(pattern, function(c) fields[#fields+1] = c end)
+  return fields
+end
+
 local function generateAuthHeaders(awsVerb, awsId, awsKey, awsToken, md5, acl, type, destination)
    -- Thanks to https://github.com/jamesmarlowe/lua-resty-s3/, BSD license.
    -- Used to sign S3 requests.
@@ -132,7 +139,7 @@ function URLencodeIgnoringPath(str)
    -- would encode '/' as "%2f" and it doesn't handle other characters
    -- like apostrophe ('), which amazon doesn't expect is encoded.
    -- It's important to get this right!
-   return url.build_path(string.split(str, "/"))
+   return url.build_path(str:split("/"))
 end
 
 function S3Bucket:get(key, sink)
