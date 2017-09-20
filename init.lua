@@ -38,7 +38,7 @@ function getMetadataCredentials(role)
                               sink = ltn12.sink.table(result),
                         }
    if resultCode ~= 200 then
-      error(string.format("Could not retrieve credentials for the IAM role '%s' from the AWS metadata service. Are you on AWS? Is your EC2 IAM role provisioning set up correctly? Error code: %d, returned: '%s'",
+      error(string.format("Could not retrieve credentials for the IAM role '%s' from the AWS metadata service. Are you on AWS? Is your EC2 IAM role provisioning set up correctly? Error code: %s, returned: '%s'",
                           role,
                           resultCode,
                           table.concat(result)
