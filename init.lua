@@ -5,6 +5,8 @@ local crypto = require("crypto")
 local cjson = require("cjson")
 local date = require("date") -- this is luadate
 
+http.TIMEOUT = 30
+
 local function generateAuthHeaders(awsVerb, awsId, awsKey, awsToken, md5, acl, type, destination)
    -- Thanks to https://github.com/jamesmarlowe/lua-resty-s3/, BSD license.
    -- Used to sign S3 requests.
